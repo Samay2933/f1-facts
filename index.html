@@ -6,36 +6,64 @@
     <title>Formula 1 Fun Facts</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #eaeaea; /* Light grey background */
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://example.com/f1-background.jpg'); /* Replace with an actual F1 background image */
+            background-size: cover;
+            color: #fff; /* White text for better contrast */
         }
 
         .container {
             max-width: 600px;
-            margin: auto;
-            background: white;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            color: #333;
+            color: #ff0000; /* Red color for F1 theme */
+            margin-bottom: 20px;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
+            margin: 20px 0;
         }
 
         li {
-            background: #e2e2e2;
+            background: #f1c40f; /* Yellow background for facts */
             margin: 10px 0;
             padding: 10px;
             border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        li:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        button {
+            background-color: #ff0000; /* Red button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c70000; /* Darker red on hover */
         }
     </style>
 </head>
@@ -43,7 +71,7 @@
     <div class="container">
         <h1>Fun Facts About Formula 1</h1>
         <ul id="facts-list"></ul>
-        <button id="generate-facts">Generate Facts</button>
+        <button id="generate-facts">Generate Fact</button>
     </div>
     <script>
         const facts = [
@@ -59,14 +87,18 @@
             "F1 is one of the most-watched sports globally, with an estimated 400 million viewers tuning in for the season finale each year."
         ];
 
+        let currentFactIndex = 0;
+
         document.getElementById('generate-facts').addEventListener('click', () => {
             const factsList = document.getElementById('facts-list');
-            factsList.innerHTML = ''; // Clear previous facts
-            facts.forEach(fact => {
+            if (currentFactIndex < facts.length) {
                 const li = document.createElement('li');
-                li.textContent = fact;
+                li.textContent = facts[currentFactIndex];
                 factsList.appendChild(li);
-            });
+                currentFactIndex++;
+            } else {
+                alert("No more facts to display!");
+            }
         });
     </script>
 </body>
