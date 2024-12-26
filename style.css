@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light grey background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Allow footer to be at the bottom */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333; /* Dark text for better contrast */
+}
+
+.container {
+    max-width: 600px;
+    background: white; /* White background for the container */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+h1 {
+    color: #ff0000; /* Red color for F1 theme */
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Larger font size for the title */
+}
+
+#fact {
+    background: #f1c40f; /* Yellow background for the fact */
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    display: none; /* Initially hidden */
+    font-size: 1.2em; /* Slightly larger font for facts */
+}
+
+button {
+    background-color: #ff0000; /* Red button */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #c70000; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+footer {
+    margin-top: auto; /* Push footer to the bottom */
+    padding: 10px;
+    background-color: #333; /* Dark background for footer */
+    color: white; /* White text for footer */
+    text-align: center;
+    width: 100%; /* Full width */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Responsive font size for smaller screens */
+    }
+
+    button {
+        font-size: 1em; /* Responsive font size for button */
+        padding: 10px 20px; /* Responsive padding */
+    }
+}
