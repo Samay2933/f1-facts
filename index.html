@@ -103,6 +103,7 @@
         <h1>🏎️ Fun Facts About Formula 1</h1>
         <div id="fact"></div>
         <button id="generate-facts">Generate Fact</button>
+        <audio id="f1-sound" src="f1-facts/f1sound.mp3" preload="auto"></audio>
     </div>
     <footer>
         <p>&copy; 2024 Formula 1 Fun Facts. All rights reserved.</p>
@@ -130,9 +131,12 @@
 
         document.getElementById('generate-facts').addEventListener('click', () => {
             const factElement = document.getElementById('fact');
+            const f1Sound = document.getElementById('f1-sound');
             if (currentFactIndex < facts.length) {
                 factElement.textContent = facts[currentFactIndex];
                 factElement.style.display = 'block'; // Show the fact
+                f1Sound.currentTime = 0; // Reset sound to start
+                f1Sound.play(); // Play the sound
                 currentFactIndex++;
             } else {
                 alert("No more facts to display!");
