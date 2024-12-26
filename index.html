@@ -9,19 +9,17 @@
             font-family: 'Arial', sans-serif;
             background-color: #eaeaea; /* Light grey background */
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('https://example.com/f1-background.jpg'); /* Replace with an actual F1 background image */
-            background-size: cover;
-            color: #fff; /* White text for better contrast */
+            color: #333; /* Dark text for better contrast */
         }
 
         .container {
             max-width: 600px;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -33,22 +31,13 @@
             margin-bottom: 20px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        #fact {
+            background: #f1c40f; /* Yellow background for the fact */
             margin: 20px 0;
-        }
-
-        li {
-            background: #f1c40f; /* Yellow background for facts */
-            margin: 10px 0;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             transition: transform 0.2s;
-        }
-
-        li:hover {
-            transform: scale(1.05); /* Slightly enlarge on hover */
+            display: none; /* Initially hidden */
         }
 
         button {
@@ -60,7 +49,6 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
-            margin-top: 20px; /* Add some space above the button */
         }
 
         button:hover {
@@ -71,7 +59,7 @@
 <body>
     <div class="container">
         <h1>Fun Facts About Formula 1</h1>
-        <ul id="facts-list"></ul>
+        <div id="fact"></div>
         <button id="generate-facts">Generate Fact</button>
     </div>
     <script>
@@ -91,14 +79,14 @@
         let currentFactIndex = 0;
 
         document.getElementById('generate-facts').addEventListener('click', () => {
-            const factsList = document.getElementById('facts-list');
+            const factElement = document.getElementById('fact');
             if (currentFactIndex < facts.length) {
-                const li = document.createElement('li');
-                li.textContent = facts[currentFactIndex];
-                factsList.appendChild(li);
+                factElement.textContent = facts[currentFactIndex];
+                factElement.style.display = 'block'; // Show the fact
                 currentFactIndex++;
             } else {
                 alert("No more facts to display!");
+                factElement.style.display = 'none'; // Hide the fact if no more facts
             }
         });
     </script>
