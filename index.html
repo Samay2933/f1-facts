@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e2e2e2;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts About Formula 1</h1>
+        <ul id="facts-list"></ul>
+        <button id="generate-facts">Generate Facts</button>
+    </div>
+    <script>
+        const facts = [
+            "The fastest recorded speed in an F1 race is 372.5 km/h (231.5 mph), achieved by Valtteri Bottas during the 2019 Mexican Grand Prix.",
+            "A typical pit stop in F1 can take as little as 2-3 seconds, with teams changing all four tires and making adjustments in record time.",
+            "The current points system awards points to the top 10 finishers in a race, with the winner receiving 25 points. This system was introduced in 2010.",
+            "Scuderia Ferrari is the oldest and most successful team in F1 history, having competed since 1950 and winning 16 Constructors' Championships.",
+            "Max Verstappen became the youngest driver to compete in an F1 race at the age of 17 years and 166 days during the 2015 Australian Grand Prix.",
+            "F1 races take place on five continents, with circuits ranging from street circuits like Monaco to purpose-built tracks like Silverstone.",
+            "F1 has pioneered many safety features that are now standard in road cars, including crash helmets, seat belts, and the HANS device (Head and Neck Support).",
+            "Modern F1 cars use hybrid power units that combine a turbocharged internal combustion engine with an energy recovery system, producing over 1000 horsepower.",
+            "Teams have access to different tire compounds during a race weekend, including soft, medium, and hard tires, each designed for varying levels of grip and durability.",
+            "F1 is one of the most-watched sports globally, with an estimated 400 million viewers tuning in for the season finale each year."
+        ];
+
+        document.getElementById('generate-facts').addEventListener('click', () => {
+            const factsList = document.getElementById('facts-list');
+            factsList.innerHTML = ''; // Clear previous facts
+            facts.forEach(fact => {
+                const li = document.createElement('li');
+                li.textContent = fact;
+                factsList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
