@@ -19,4 +19,4 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/<your-username>/formula1-fun-facts.git
+   git clone https://github.com/Samay2933/formula1-fun-facts.git
