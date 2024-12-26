@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column; /* Allow footer to be at the bottom */
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -64,6 +65,15 @@
             transform: scale(1.05); /* Slightly enlarge on hover */
         }
 
+        footer {
+            margin-top: auto; /* Push footer to the bottom */
+            padding: 10px;
+            background-color: #333; /* Dark background for footer */
+            color: white; /* White text for footer */
+            text-align: center;
+            width: 100%; /* Full width */
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em; /* Responsive font size for smaller screens */
@@ -82,6 +92,9 @@
         <div id="fact"></div>
         <button id="generate-facts">Generate Fact</button>
     </div>
+    <footer>
+        <p>&copy; 2024 Formula 1 Fun Facts. All rights reserved.</p>
+    </footer>
     <script>
         const facts = [
             "The fastest recorded speed in an F1 race is 372.5 km/h (231.5 mph), achieved by Valtteri Bottas during the 2019 Mexican Grand Prix.",
