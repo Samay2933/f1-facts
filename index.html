@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formula 1 Fun Facts 🏎️</title>
+    <title>🏎️ Fun Facts About Formula 1</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -67,11 +67,23 @@
 
         footer {
             margin-top: auto; /* Push footer to the bottom */
-            padding: 10px;
+            padding: 20px;
             background-color: #333; /* Dark background for footer */
             color: white; /* White text for footer */
             text-align: center;
             width: 100%; /* Full width */
+            position: relative; /* Position relative for better layout */
+        }
+
+        footer a {
+            color: #f1c40f; /* Yellow color for links */
+            text-decoration: none; /* Remove underline */
+            margin: 0 10px; /* Space between links */
+            transition: color 0.3s; /* Transition for hover effect */
+        }
+
+        footer a:hover {
+            color: #ff0000; /* Change color on hover */
         }
 
         @media (max-width: 600px) {
@@ -88,12 +100,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Fun Facts About Formula 1 🏎️</h1>
+        <h1>🏎️ Fun Facts About Formula 1</h1>
         <div id="fact"></div>
         <button id="generate-facts">Generate Fact</button>
     </div>
     <footer>
         <p>&copy; 2024 Formula 1 Fun Facts. All rights reserved.</p>
+        <p>
+            <a href="https://www.instagram.com/f1/" target="_blank">Instagram</a> |
+            <a href="https://www.formula1.com/" target="_blank">Official Website</a> |
+            <a href="https://f1tv.formula1.com/" target="_blank">F1 TV</a>
+        </p>
     </footer>
     <script>
         const facts = [
