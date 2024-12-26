@@ -136,7 +136,9 @@
                 factElement.textContent = facts[currentFactIndex];
                 factElement.style.display = 'block'; // Show the fact
                 f1Sound.currentTime = 0; // Reset sound to start
-                f1Sound.play(); // Play the sound
+                f1Sound.play().catch(error => {
+                    console.error("Error playing sound:", error);
+                }); // Play the sound and catch any errors
                 currentFactIndex++;
             } else {
                 alert("No more facts to display!");
