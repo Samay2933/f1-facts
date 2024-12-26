@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formula 1 Fun Facts</title>
+    <title>Formula 1 Fun Facts 🏎️</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #eaeaea; /* Light grey background */
+            background-color: #f4f4f4; /* Light grey background */
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,46 +19,66 @@
 
         .container {
             max-width: 600px;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background: white; /* White background for the container */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
         }
 
         h1 {
             color: #ff0000; /* Red color for F1 theme */
             margin-bottom: 20px;
+            font-size: 2.5em; /* Larger font size for the title */
         }
 
         #fact {
             background: #f1c40f; /* Yellow background for the fact */
             margin: 20px 0;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 8px;
             transition: transform 0.2s;
             display: none; /* Initially hidden */
+            font-size: 1.2em; /* Slightly larger font for facts */
         }
 
         button {
             background-color: #ff0000; /* Red button */
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 20px;
         }
 
         button:hover {
             background-color: #c70000; /* Darker red on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Responsive font size for smaller screens */
+            }
+
+            button {
+                font-size: 1em; /* Responsive font size for button */
+                padding: 10px 20px; /* Responsive padding */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fun Facts About Formula 1</h1>
+        <h1>Fun Facts About Formula 1 🏎️</h1>
         <div id="fact"></div>
         <button id="generate-facts">Generate Fact</button>
     </div>
